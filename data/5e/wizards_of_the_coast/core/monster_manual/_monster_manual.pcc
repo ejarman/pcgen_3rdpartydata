@@ -1,7 +1,7 @@
 CAMPAIGN:Monster Manual
-KEY:Monster Manual (5e)
+KEY:5e - Monster Manual
 BOOKTYPE:Core Supplement
-PRECAMPAIGN:1,Player's Handbook (5e)
+PRECAMPAIGN:1,5e - Player's Handbook
 GAMEMODE:5e
 STATUS:ALPHA
 TYPE:Wizards of the Coast.Core
@@ -12,14 +12,18 @@ PUBNAMELONG:Wizards of the Coast
 PUBNAMESHORT:WotC
 PUBNAMEWEB:http://www.wizards.com
 COPYRIGHT:Copyright 2014, Wizards of the Coast, Inc.
-
+# COVER should be cover_gameMode_pub_book.file
+COVER:../../../../_artwork/cover_5e_wotc_mm.jpg
+# LOGO should be logo_pub.file
+LOGO:../../../../_artwork/logo_wotc.png
 INFOTEXT:D&D 5e Monster Manual
 
 
 ABILITY:mm_abilities.lst
 #ABILITYCATEGORY:mm_abilitycategories.lst
 #CLASS:mm_classes.lst
-#DEITY:mm_deities.lst
+COMPANIONMOD:mm_companionmods.lst
+DEITY:mm_deities.lst
 
 #EQUIPMENT:mm_equip.lst
 #EQUIPMOD:mm_equipmods.lst
@@ -36,7 +40,7 @@ RACE:mm_races.lst
 #SKILL:mm_skills.lst
 
 #SPELL:mm_spells.lst
-#TEMPLATE:mm_templates.lst
+TEMPLATE:mm_templates.lst
 
 ###Block: Revisions
 # BD - 0.01 Initial update 

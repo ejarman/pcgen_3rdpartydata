@@ -19,6 +19,10 @@ SOURCEWEB:www.wizards.com
 ISOGL:NO
 ISLICENSED:NO
 COPYRIGHT:Wizards of the Coast
+# COVER should be cover_gameMode_pub_book.file
+COVER:../../../../_artwork/cover_35e_wotc_ci.jpg
+# LOGO should be logo_pub.file
+LOGO:../../../../_artwork/logo_wotc.png
 
 ABILITY:ci_abilities.lst
 ABILITYCATEGORY:ci_abilitycategories.lst
@@ -31,6 +35,9 @@ SKILL:ci_skills.lst
 SPELL:ci_spells.lst
 
 INFOTEXT:Supports 6.4.1
+
+FORWARDREF:CLASSSPELLLIST|Hexblade,Shadowcaster,Warlock
+
 # ENTRY DATE: 2015-01 (Unknown)
 # LST MONKEY: Bahamut
 # RELEASE REVIEW #
