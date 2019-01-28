@@ -1,8 +1,8 @@
 # CVS $Revision: $ $Author: $ -- Thu Aug  7 12:47:32 2014 -- reformated by prettylst.pl v1.51 (build 24365)
 SOURCELONG:Player's Handbook II	SOURCESHORT:PH2	SOURCEDATE:2006-05
 
-# Class Name	Hit Dice	Type			Source Page		Combat bonus															Modify VAR													Bonus
-CLASS:Beguiler	HD:6		TYPE:Base.PC	SOURCEPAGE:p.6	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*1/2|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:VAR|ClassBABPoor|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	DEFINE:BeguilerLVL|0	BONUS:VAR|BeguilerLVL|CL
+# Class Name	Hit Dice	Type										Source Page		Combat bonus															Modify VAR													Bonus
+CLASS:Beguiler	HD:6		TYPE:Base.PC.Spellcaster.Arcane.SpontaneousArcaneCaster	SOURCEPAGE:p.6	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*1/2|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:VAR|ClassBABPoor|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	DEFINE:BeguilerLVL|0	BONUS:VAR|BeguilerLVL|CL
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Beguiler	STARTSKILLPTS:6	CSKILL:Appraise|Balance|Bluff|Climb|Concentration|Decipher Script|Diplomacy|Disable Device|Disguise|Escape Artist|Forgery|Gather Information|Hide|Jump|Knowledge (arcana)|TYPE=KnowledgeLocal|Listen|Move Silently|Open Lock|TYPE=Profession|Search|Sense Motive|Sleight of Hand|Speak Language|Spellcraft|Spot|Swim|Tumble|Use Magic Device
 # Class Name	Spell Stat		Spell Type		Memorize	Automatically Known Spell Levels							Caster level			Use Spell List
@@ -58,11 +58,11 @@ CLASS:Dragon Shaman	STARTSKILLPTS:2	CSKILL:Climb|TYPE=Craft|Intimidate|Knowledge
 
 
 # Class Name	Hit Dice	Type			Abbreviation	Source Page		Combat bonus																Modify VAR																			Bonus
-CLASS:Duskblade	HD:8		TYPE:Base.PC	FACT:Abb|DB		SOURCEPAGE:p.19	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|FamiliarLVL|DuskbladeLVL	BONUS:SAVE|BASE.Will,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3
+CLASS:Duskblade	HD:8		TYPE:Base.PC.Spellcaster.Arcane.SpontaneousArcaneCaster	FACT:Abb|DB		SOURCEPAGE:p.19	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|FamiliarLVL|DuskbladeLVL	BONUS:SAVE|BASE.Will,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Duskblade	STARTSKILLPTS:2	CSKILL:Climb|Concentration|TYPE=Craft|Decipher Script|Jump|TYPE=Knowledge|Ride|Sense Motive|Spellcraft|Swim
 # Class Name	Spell Stat		Spell Type		Spellbook		Caster level
-CLASS:Duskblade	FACT:SpellType|Arcane	SPELLBOOK:YES	DEFINE:DuskbladeLVL|0	BONUS:VAR|DuskbladeLVL|CL
+CLASS:Duskblade	FACT:SpellType|Arcane	MEMORIZE:NO	DEFINE:DuskbladeLVL|0	BONUS:VAR|DuskbladeLVL|CL
 # Class Name	Spell Stat		Spell Type		Spellbook				Caster level
 CLASS:Duskblade	SPELLSTAT:INT	BONUS:CASTERLEVEL|Duskblade|Caster_Level_Duskblade	DEFINE:Caster_Level_Duskblade|0	BONUS:VAR|Caster_Level_Duskblade|CL+Caster_Level_Bonus	DEFINE:CasterLevelBLDuskblade|0	BONUS:VAR|CasterLevelBLDuskblade|charbonusto("PCLEVEL","Duskblade")	BONUS:VAR|Caster_Level_Highest__Arcane|Caster_Level_Duskblade+CasterLevelBLDuskblade|TYPE=Base
 ###Block:

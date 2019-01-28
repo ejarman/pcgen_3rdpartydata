@@ -57,7 +57,8 @@ CLASS:Hexblade	!PREALIGN:LG,NG,CG
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Hexblade	STARTSKILLPTS:2	CSKILL:Bluff|Concentration|TYPE=Craft|Diplomacy|Intimidate|Knowledge (arcana)|TYPE=Profession|Ride|Spellcraft
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
-CLASS:Hexblade	SPELLSTAT:CHA	FACT:SpellType|Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Hexblade|Caster_Level_BL_Stripped_Hexblade	DEFINE:Caster_Level_BL_Stripped_Hexblade|0	BONUS:VAR|Caster_Level_BL_Stripped_Hexblade|Caster_Level_Hexblade-CasterLevelBLHexblade	BONUS:VAR|Caster_Level_Hexblade|CL+Caster_Level_Bonus+CasterLevelBLHexblade	DEFINE:CasterLevelBLHexblade|0	BONUS:VAR|CasterLevelBL_x_Hexblade|charbonusto("PCLEVEL","Hexblade")	BONUS:VAR|Caster_Level_Highest__Arcane|Caster_Level_Hexblade/2|TYPE=Base|PRECLASS:1,Hexblade=4
+CLASS:Hexblade	SPELLSTAT:CHA	FACT:SpellType|Arcane	MEMORIZE:NO	
+CLASS:Hexblade	BONUS:CASTERLEVEL|Hexblade|Caster_Level_Hexblade|PRECLASS:1,Hexblade=4	DEFINE:Caster_Level_BL_Stripped_Hexblade|0	BONUS:VAR|Caster_Level_BL_Stripped_Hexblade|Caster_Level_Hexblade-CasterLevelBLHexblade	BONUS:VAR|Caster_Level_Hexblade|(HexbladeLVL/2)+Caster_Level_Bonus	DEFINE:CasterLevelBLHexblade|0	BONUS:VAR|CasterLevelBL_x_Hexblade|charbonusto("PCLEVEL","Hexblade")	BONUS:VAR|Caster_Level_Highest__Arcane|Caster_Level_Hexblade|TYPE=Base|PRECLASS:1,Hexblade=4	DEFINE:Caster_Level_Hexblade|0
 1	ABILITY:Hexblade Class Feature|AUTOMATIC|Hexblade ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.HexbladeProficiencies
 1	ABILITY:Hexblade Class Feature|AUTOMATIC|Hexblade ~ Hexblade's Curse|!PREABILITY:1,CATEGORY=ACF,TYPE.HexbladeCurse
 2	ABILITY:Hexblade Class Feature|AUTOMATIC|Hexblade ~ Arcane Resistance|!PREABILITY:1,CATEGORY=ACF,TYPE.HexbladeArcaneResistance
@@ -304,11 +305,12 @@ CLASS:Dervish	STARTSKILLPTS:4	CSKILL:Balance|TYPE=Craft|Escape Artist|Jump|Liste
 ###TODO CONTIGUOUS:Monk
 
 # Class Name		Hit Dice	Type			Abbreviation	Source Page		Combat bonus															Modify VAR														Bonus
-CLASS:Drunken Master	HD:8		TYPE:Prestige	FACT:Abb|Dru		SOURCEPAGE:p.27	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
+CLASS:Drunken Master	HD:8		TYPE:Prestige	FACT:Abb|Dru		SOURCEPAGE:p.27	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	DEFINE:DrunkenMasterLVL|0	BONUS:VAR|DrunkenMasterLVL|CL
 # Class Name		Required Ability															Required Feat								Required Skill		Required Text
-CLASS:Drunken Master	PREABILITY:1,CATEGORY=Special Ability,Evasion	PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows	PREABILITY:3,CATEGORY=FEAT,Dodge,Great Fortitude,Improved Unarmed Strike	PRESKILL:1,Tumble=8	PRETEXT:Must be chosen by existing drunken masters and survive a night of revelry among them without being incarcerated, poisoned or extraordinarily embarassed
+CLASS:Drunken Master	PREABILITY:1,CATEGORY=Special Ability,TYPE.Evasion	PREABILITY:1,CATEGORY=Special Ability,TYPE.Flurry of Blows	PREABILITY:3,CATEGORY=FEAT,Dodge,Great Fortitude,Improved Unarmed Strike	PRESKILL:1,Tumble=8	PRETEXT:Must be chosen by existing drunken masters and survive a night of revelry among them without being incarcerated, poisoned or extraordinarily embarassed
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Drunken Master	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE=Craft|Escape Artist|Hide|Jump|Listen|Move Silently|TYPE=Perform|TYPE=Profession|Swim|Tumble
+###Block:
 1	ABILITY:Drunken Master Class Feature|AUTOMATIC|Drunken Master ~ Weapon and Armor Proficiency
 1	ABILITY:Drunken Master Class Feature|AUTOMATIC|Drunken Master ~ Drink like a Demon|Drunken Master ~ Improvised Weapons
 2	ABILITY:Drunken Master Class Feature|AUTOMATIC|Drunken Master ~ Stagger
@@ -320,10 +322,6 @@ CLASS:Drunken Master	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE=Craft|Escap
 8	ABILITY:Drunken Master Class Feature|AUTOMATIC|Drunken Master ~ For Medicinal Purposes
 9	ABILITY:Drunken Master Class Feature|AUTOMATIC|Drunken Master ~ Corkscrew Rush|Drunken Master ~ Superior Improvised Weapons
 10	ABILITY:Drunken Master Class Feature|AUTOMATIC|Drunken Master ~ Breath of Flame
-###Block:
-4	BONUS:VAR|DrunkenMasterACBonusLVL|CL
-8	BONUS:VAR|MedicinalPurposePerDay|3
-10	BONUS:VAR|DrunkenMasterBreathFlameLVL|CL
 ###Block:
 11	PREPCLEVEL:MIN=20
 
@@ -374,6 +372,7 @@ CLASS:Frenzied Berserker	STARTSKILLPTS:2	CSKILL:Climb|Intimidate|Jump|Ride|Ride|
 4	ABILITY:Frenzied Berserker Class Feature|AUTOMATIC|Frenzied Berserker ~ Deathless Frenzy
 5	ABILITY:Frenzied Berserker Class Feature|AUTOMATIC|Frenzied Berserker ~ Improved Power Attack
 6	ABILITY:Frenzied Berserker Class Feature|AUTOMATIC|Frenzied Berserker ~ Inspire Frenzy
+8	ABILITY:Frenzied Berserker Class Feature|AUTOMATIC|Frenzied Berserker ~ Greater Frenzy
 10	ABILITY:Frenzied Berserker Class Feature|AUTOMATIC|Frenzied Berserker ~ Supreme Power Attack
 ###Block:
 1	BONUS:VAR|FrenziedBerserkerFrenzyTimesLVL|CL	DEFINE:FrenziedBerserkerFrenzyTimesLVL|0
@@ -469,9 +468,9 @@ CLASS:Hunter of the Dead	SPELLSTAT:WIS	FACT:SpellType|Divine	KNOWNSPELLS:LEVEL=0
 11	PREPCLEVEL:MIN=20
 
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Combat bonus										Bonus
-CLASS:Invisible Blade	HD:6		TYPE:Prestige	FACT:Abb|Inv		MAXLEVEL:5	SOURCEPAGE:p.44	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
+CLASS:Invisible Blade	HD:6		TYPE:Prestige	FACT:Abb|Inv	DEFINE:InvisibleBladeLVL|0	BONUS:VAR|InvisibleBladeLVL|CL	MAXLEVEL:5	SOURCEPAGE:p.44	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
 # Class Name		Required Feat													Required Skill							Required Text
-CLASS:Invisible Blade	PREABILITY:1,CATEGORY=FEAT,Weapon Focus (Dagger),Weapon Focus (Kukri)	PREABILITY:2,CATEGORY=FEAT,Far Shot,Point Blank Shot	PRESKILL:1,Sense Motive=6	PRESKILL:1,Bluff=8	PRETEXT:Must defeat a worthy opponent using only daggers o kukris
+CLASS:Invisible Blade	PREABILITY:1,CATEGORY=FEAT,Weapon Focus (Dagger),Weapon Focus (Kukri)	PREABILITY:2,CATEGORY=FEAT,Weapon Finesse,Combat Expertise	PRESKILL:1,Sense Motive=6	PRESKILL:1,Bluff=8	PRETEXT:Must defeat a worthy opponent using only daggers o kukris
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Invisible Blade	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE=Craft|Escape Artist|Jump|Hide|Listen|Move Silently|TYPE=Perform|TYPE=Profession|Sense Motive|Spot|Tumble
 1	ABILITY:Invisible Blade Class Feature|AUTOMATIC|Invisible Blade ~ Weapon and Armor Proficiency
@@ -480,7 +479,6 @@ CLASS:Invisible Blade	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE=Craft|Esca
 3	ABILITY:Invisible Blade Class Feature|AUTOMATIC|Invisible Blade ~ Uncanny Feint
 4	ABILITY:Invisible Blade Class Feature|AUTOMATIC|Invisible Blade ~ Feint Mastery
 ###Block:
-1	BONUS:VAR|InvisibleBladeDaggerSneakAttackLVL|CL	BONUS:VAR|InvisibleBladeUnfetteredDefenseLVL|CL
 3	BONUS:VAR|InvisibleBladeUncannyFeintLVL|CL
 
 ###TODO CONTIGUOUS:Paladin
@@ -509,7 +507,8 @@ CLASS:Justicar	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Disguise|Gather Information|He
 # Class Name	Hit Dice	Type			Abbreviation	Source Page		Combat bonus															Modify VAR														Bonus
 CLASS:Kensai	HD:10		TYPE:Prestige	FACT:Abb|Ken		SOURCEPAGE:p.49	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2
 # Class Name	Required AL		Required Feat											Required Skill						Required Text											PRETOTALAB
-CLASS:Kensai	PREALIGN:LG,LN,LE	PREABILITY:1,CATEGORY=FEAT,Combat Expertise	PREABILITY:1,CHECKMULT,CATEGORY=FEAT,Weapon Focus (TYPE=ANY)	PRESKILL:3,Concentration=5,Diplomacy=5,Ride=5	PRETEXT:Must complete an oath of service to either an overlord or an ideal	PRETOTALAB:5
+#CLASS:Kensai	PREALIGN:LG,LN,LE	PREABILITY:1,CATEGORY=FEAT,Combat Expertise	PREABILITY:1,CHECKMULT,CATEGORY=FEAT,Weapon Focus (TYPE=ANY)	PRESKILL:3,Concentration=5,Diplomacy=5,Ride=5	PRETEXT:Must complete an oath of service to either an overlord or an ideal	PRETOTALAB:5
+CLASS:Kensai	PREALIGN:LG,LN,LE	PREABILITY:1,CATEGORY=FEAT,Combat Expertise	PREABILITY:1,CATEGORY=FEAT,Weapon Focus	PRESKILL:3,Concentration=5,Diplomacy=5,Ride=5	PRETEXT:Must complete an oath of service to either an overlord or an ideal	PRETOTALAB:5
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Kensai	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE=Craft|Diplomacy|Intimidate|Jump|Knowledge (Local)|Knowledge (nobility and royalty)|Ride|Sense Motive
 1	ABILITY:Kensai Class Feature|AUTOMATIC|Kensai ~ Weapon and Armor Proficiency
@@ -661,7 +660,7 @@ CLASS:Nature's Warrior	STARTSKILLPTS:2	CSKILL:Diplomacy|Handle Animal|Intimidate
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Combat bonus										Bonus
 CLASS:Occult Slayer	HD:8		TYPE:Prestige	FACT:Abb|Osl		MAXLEVEL:5	SOURCEPAGE:p.66	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2
 # Class Name		Required Feat									Required Skill								PRETOTALAB
-CLASS:Occult Slayer	PREABILITY:1,CATEGORY=FEAT,Improved Initiative	PREABILITY:1,CATEGORY=FEAT,Weapon Focus (TYPE=ANY)	PRESKILL:1,Knowledge (Arcana)=4	PRESKILL:1,Spellcraft=3	PRETOTALAB:5
+CLASS:Occult Slayer	PREABILITY:1,CATEGORY=FEAT,Improved Initiative	PREABILITY:1,CATEGORY=FEAT,Weapon Focus	PRESKILL:1,Knowledge (Arcana)=4	PRESKILL:1,Spellcraft=3	PRETOTALAB:5
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Occult Slayer	STARTSKILLPTS:2	CSKILL:Bluff|TYPE=Craft|Gather Information|Knowledge (arcana)|TYPE=Profession|Sense Motive|Spellcraft
 1	ABILITY:Occult Slayer Class Feature|AUTOMATIC|Occult Slayer ~ Weapon and Armor Proficiency
@@ -762,7 +761,7 @@ CLASS:Ravager	STARTSKILLPTS:2	CSKILL:Intimidate|Knowledge (Religion)|Move Silent
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Combat bonus										Bonus
 CLASS:Reaping Mauler	HD:10		TYPE:Prestige	FACT:Abb|Rem		MAXLEVEL:5	SOURCEPAGE:p.75	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
 # Class Name		Required Feat														Required Skill				Required Text																PRETOTALAB
-CLASS:Reaping Mauler	PREABILITY:2,CATEGORY=FEAT,Clever Wrestling,Improved Unarmed Strike	PREABILITY:2,CATEGORY=FEAT,Improved Sunder,Power Attack	PRESKILL:2,Escape Artist=5,Tumble=5	PRETEXT:Must have defeated at least 3 opponents one size category larger than himself with his bare hands	PRETOTALAB:5
+CLASS:Reaping Mauler	PREABILITY:2,CATEGORY=FEAT,Clever Wrestling,Improved Unarmed Strike	PRESKILL:2,Escape Artist=5,Tumble=5	PRETEXT:Must have defeated at least 3 opponents one size category larger than himself with his bare hands	PRETOTALAB:5
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Reaping Mauler	STARTSKILLPTS:2	CSKILL:Climb|TYPE=Craft|Escape Artist|Intimidate|Jump|TYPE=Perform|TYPE=Profession|Swim|Tumble
 1	ABILITY:Reaping Mauler Class Feature|AUTOMATIC|Reaping Mauler ~ Weapon and Armor Proficiency
@@ -873,6 +872,9 @@ CLASS:Thayan Knight	HD:10		TYPE:Prestige	FACT:Abb|Thk		MAXLEVEL:5	SOURCEPAGE:p.8
 CLASS:Thayan Knight	PREALIGN:LN,LE,TN,NE,CN,CE	PREABILITY:2,CATEGORY=FEAT,Iron Will,Weapon Focus (Longsword)	PRERACE:1,RACESUBTYPE=Human	PRESKILL:3,Intimidate=2,Knowledge (Arcana)=2,TYPE.Knowledge (Local)=2	PRETEXT:Must sworn allegiance to the Red Wizards of Thay	PRETOTALAB:5
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Thayan Knight	STARTSKILLPTS:2	CSKILL:Bluff|Climb|TYPE=Craft|Gather Information|Handle Animal|Intimidate|Jump|Knowledge (arcana)|Knowledge (Local)|TYPE=Profession|Spot|Swim
+#
+CLASS:Thayan Knight	DEFINE:ThayanKnightLVL|0	BONUS:VAR|ThayanKnightLVL|CL
+#
 1	ABILITY:Thayan Knight Class Feature|AUTOMATIC|Thayan Knight ~ Weapon and Armor Proficiency
 1	ABILITY:Thayan Knight Class Feature|AUTOMATIC|Thayan Knight ~ Horrors of Thay|Thayan Knight ~ Zulkir's Favor
 2	ABILITY:Thayan Knight Class Feature|AUTOMATIC|Thayan Knight ~ Zulkir's Defender
@@ -918,3 +920,4 @@ CLASS:Warshaper	STARTSKILLPTS:2	CSKILL:Balance|Climb|Concentration|TYPE=Craft|Di
 5	ABILITY:Warshaper Class Feature|AUTOMATIC|Warshaper ~ Flashmorph/Multimorph
 ###Block
 5	BONUS:ABILITYPOOL|Warshaper Morph|1
+

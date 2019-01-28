@@ -35,7 +35,6 @@ SOURCELONG:Champions of Valor	SOURCESHORT:CV	SOURCEDATE:2005-11
 ##Thunderstroke
 
 # Spell Name			Type				Classes of caster						School			Sub-School			Descriptor						Components		Casting Time			Range			Target Area or Effect															Duration									Save Info							Spell Resistance	Cost		Source Page		Description
-Vision of Punishment		TYPE:Arcane.Divine	CLASSES:ALL=1						SCHOOL:Divination													COMPS:V,DF*		CASTTIME:1 swift action		RANGE:Close		TARGETAREA:One evil living creatures												DURATION:1 round/3 levels						SAVEINFO:Will partial					SPELLRES:Yes			SOURCEPAGE:p.	DESC:See Text
 Animate with the Spirit		TYPE:Arcane.Divine	CLASSES:ALL=4						SCHOOL:Conjuration	SUBSCHOOL:Summoning	DESCRIPTOR:Good|Sanctified			COMPS:V,S,DF*	CASTTIME:10 minutes		RANGE:Medium	TARGETAREA:One corpse with HD equal to or less than your caster level							DURATION:(CASTERLEVEL*10) minutes [D]				SAVEINFO:None						SPELLRES:No				SOURCEPAGE:52	DESC:Requests a spirit of a good aligned outsider to inhabit a corpse (6 HD max). This then fights for you. Summoning the spirit drains you of 1d3 points of Strength.
 Benign Projection			TYPE:Arcane.Divine	CLASSES:ALL=6						SCHOOL:Illusion		SUBSCHOOL:Shadow		DESCRIPTOR:Good|Sanctified			COMPS:V,S,DF*	CASTTIME:1 standard action	RANGE:Medium	TARGETAREA:One shadow duplicate of you or just your face									DURATION:(CASTERLEVEL) rounds [D]					SAVEINFO:Will disbelief (if interacted with)	SPELLRES:Yes			SOURCEPAGE:53	DESC:You create an image of you that can shed light as a candle. It can only mimic your actions and speech, but you can cast spells with it from the abjuration, divination, and conjuration (healing) schools. Creating it drains you of 1d2 points of Strength.
 Celestial Fortress		TYPE:Arcane.Divine	CLASSES:ALL=4						SCHOOL:Conjuration	SUBSCHOOL:Creation	DESCRIPTOR:Good|Sanctified			COMPS:V,S,DF*	CASTTIME:10 minutes		RANGE:Close		TARGETAREA:20 ft. square structure													DURATION:(CASTERLEVEL*2) hours [D]					SAVEINFO:None						SPELLRES:No				SOURCEPAGE:53	DESC:Creates a simple flat-roofed fort with a sturdy door, fireplace, but no windows. It is protected by consecrate and magic circle against evil. Creating it drains you of 1d2 points of Constitution.
@@ -74,43 +73,43 @@ Vision of Punishment		TYPE:Arcane.Divine	CLASSES:ALL=1						SCHOOL:Divination			
 
 ###Block: Knight of the Weave Spell List
 # Spell Name					Classes of caster
-Bless.MOD						CLASSES:Knight of the Weave=1
-Bless Weapon.MOD					CLASSES:Knight of the Weave=1
-Charm Person.MOD					CLASSES:Knight of the Weave=1
-Command.MOD						CLASSES:Knight of the Weave=1
+Bless.MOD					CLASSES:Knight of the Weave=1
+Bless Weapon.MOD				CLASSES:Knight of the Weave=1
+Charm Person.MOD				CLASSES:Knight of the Weave=1
+Command.MOD					CLASSES:Knight of the Weave=1
 Comprehend Languages.MOD			CLASSES:Knight of the Weave=1
 Cure Light Wounds.MOD				CLASSES:Knight of the Weave=1
-Divine Favor.MOD					CLASSES:Knight of the Weave=1
+Divine Favor.MOD				CLASSES:Knight of the Weave=1
 Restoration (Lesser).MOD			CLASSES:Knight of the Weave=1
 Mage Armor.MOD					CLASSES:Knight of the Weave=1
-Magic Missile.MOD					CLASSES:Knight of the Weave=1
-Magic Weapon.MOD					CLASSES:Knight of the Weave=1
+Magic Missile.MOD				CLASSES:Knight of the Weave=1
+Magic Weapon.MOD				CLASSES:Knight of the Weave=1
 Read Magic.MOD					CLASSES:Knight of the Weave=1
-Shield.MOD						CLASSES:Knight of the Weave=1
+Shield.MOD					CLASSES:Knight of the Weave=1
 Arcane Lock.MOD					CLASSES:Knight of the Weave=2
 Bear's Endurance.MOD				CLASSES:Knight of the Weave=2
 Bull's Strength.MOD				CLASSES:Knight of the Weave=2
 Cat's Grace.MOD					CLASSES:Knight of the Weave=2
 Darkvision.MOD					CLASSES:Knight of the Weave=2
-Delay Poison.MOD					CLASSES:Knight of the Weave=2
+Delay Poison.MOD				CLASSES:Knight of the Weave=2
 Eagle's Splendor.MOD				CLASSES:Knight of the Weave=2
-Resist Energy.MOD					CLASSES:Knight of the Weave=2
+Resist Energy.MOD				CLASSES:Knight of the Weave=2
 See Invisibility.MOD				CLASSES:Knight of the Weave=2
-Shield Other.MOD					CLASSES:Knight of the Weave=2
-Arcane Sight.MOD					CLASSES:Knight of the Weave=3
+Shield Other.MOD				CLASSES:Knight of the Weave=2
+Arcane Sight.MOD				CLASSES:Knight of the Weave=3
 Cure Moderate Wounds.MOD			CLASSES:Knight of the Weave=3
-Quick Potion.MOD					CLASSES:Knight of the Weave=3
+Quick Potion.MOD				CLASSES:Knight of the Weave=3
 Daylight.MOD					CLASSES:Knight of the Weave=3
-Dispel Magic.MOD					CLASSES:Knight of the Weave=3
+Dispel Magic.MOD				CLASSES:Knight of the Weave=3
 Fly.MOD						CLASSES:Knight of the Weave=3
 Forceward.MOD					CLASSES:Knight of the Weave=3
 Magic Weapon (Greater).MOD			CLASSES:Knight of the Weave=3
-Phantom Steed.MOD					CLASSES:Knight of the Weave=3
-Remove Curse.MOD					CLASSES:Knight of the Weave=3
+Phantom Steed.MOD				CLASSES:Knight of the Weave=3
+Remove Curse.MOD				CLASSES:Knight of the Weave=3
 Break Enchantment.MOD				CLASSES:Knight of the Weave=4
 Cure Serious Wounds.MOD				CLASSES:Knight of the Weave=4
 Death Ward.MOD					CLASSES:Knight of the Weave=4
-Globe of Invulnerability (Lesser).MOD	CLASSES:Knight of the Weave=4
+Globe of Invulnerability (Lesser).MOD		CLASSES:Knight of the Weave=4
 Mark of Justice.MOD				CLASSES:Knight of the Weave=4
 Neutralize Poison.MOD				CLASSES:Knight of the Weave=4
 Restoration.MOD					CLASSES:Knight of the Weave=4
@@ -123,3 +122,11 @@ True Seeing.MOD					CLASSES:Knight of the Weave=5
 Banishment.MOD					CLASSES:Knight of the Weave=6
 Dispel Magic (Greater).MOD			CLASSES:Knight of the Weave=6
 Teleport.MOD					CLASSES:Knight of the Weave=6
+
+
+Animate with the Spirit.MOD	!PREALIGN:LE,NE,CE	PRESPELLCAST:MEMORIZE=Y
+Benign Projection.MOD		!PREALIGN:LE,NE,CE	PRESPELLCAST:MEMORIZE=Y
+Celestial Fortress.MOD		!PREALIGN:LE,NE,CE	PRESPELLCAST:MEMORIZE=Y
+Create Lantern Archon.MOD	!PREALIGN:LE,NE,CE	PRESPELLCAST:MEMORIZE=Y
+Holy Fire Shield.MOD		!PREALIGN:LE,NE,CE	PRESPELLCAST:MEMORIZE=Y
+Vision of Punishment.MOD	!PREALIGN:LE,NE,CE	PRESPELLCAST:MEMORIZE=Y
